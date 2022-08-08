@@ -328,9 +328,8 @@ class Renderer(object):
         # print(C)
         triangleNormal = ml.crossProduct( ml.subtractArrays([B.x, B.y, B.z], [A.x, A.y, A.z]), ml.subtractArrays([C.x, C.y, C.z], [A.x, A.y, A.z]))
         # normalizar
-        triangleNormal = triangleNormal / np.linalg.norm(triangleNormal)
-        # res1 = ml.norm(triangleNormal)
-        # triangleNormal = triangleNormal / res1
+
+        triangleNormal[:] = [x / ml.norm(triangleNormal) for x in triangleNormal]
 
         for x in range(minX, maxX + 1):
             for y in range(minY, maxY + 1):

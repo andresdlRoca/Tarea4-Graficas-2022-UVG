@@ -1,6 +1,5 @@
 import struct
 from collections import namedtuple
-import numpy as np
 import mathlib as ml
 
 from math import cos, sin, pi
